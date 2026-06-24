@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-merriweather {
+  font-family: 'Merriweather', serif;
+}
+
