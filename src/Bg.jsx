@@ -1,4 +1,4 @@
-import Bg from "./assets/BgVideo.mp4";
+import Bg from "./assets/Best2.mp4";
 import Navbar from "./Navbar";
 import { Rocket } from "lucide-react";
 
@@ -103,10 +103,7 @@ const HeroImg = () => {
               >
                 View Portfolio
               </button>
-
-             
             </div>
-
           </div>
         </div>
       </div>
