@@ -1,4 +1,4 @@
-import Bg from "./assets/Best2.mp4";
+import Bg from "./assets/MainBG.mp4";
 import Navbar from "./Navbar";
 import { Rocket } from "lucide-react";
 
@@ -29,7 +29,7 @@ const HeroImg = () => {
         </div>
 
         {/* Hero Section */}
-        <div className="flex items-center h-[80vh] px-8">
+        <div className="flex items-center h-[80vh] p-6 mt-23 ml-4 px-8">
           <div className="max-w-3xl flex flex-col gap-8">
             
             <div>
