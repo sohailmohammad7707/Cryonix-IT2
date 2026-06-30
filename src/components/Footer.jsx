@@ -1,5 +1,6 @@
 import React from "react";
 import { Hexagon, Mail, Phone, MapPin } from "lucide-react";
+import Logo from "../assets/logo.png"
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -16,8 +17,8 @@ const Footer = () => {
           {/* Company */}
           <div>
             <div className="flex items-center gap-3 mb-5 text-white">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100">
-                <Hexagon size={28} className="text-blue-600" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl">
+                <img src={Logo} alt="" />
               </div>
 
               <div>

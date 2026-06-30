@@ -1,30 +1,23 @@
 import React from "react";
 import { motion } from "motion/react";
+import Capabilities from "./Capabilities/Capabilities";
+import Team from "./Capabilities/Team";
+import web1 from "../assets/web4.png"
 
 const stats = [
-  {
-    number: "20+",
-    title: "Projects Delivered",
-  },
-  {
-    number: "10+",
-    title: "Years of Reliability",
-  },
-  {
-    number: "20+",
-    title: "Happy Clients",
-  },
-  {
-    number: "8+",
-    title: "Years Experience",
-  },
+  { number: "20+", title: "Projects Delivered" },
+  { number: "10+", title: "Years of Reliability" },
+  { number: "20+", title: "Happy Clients" },
+  { number: "8+", title: "Years Experience" },
 ];
 
+// Reusable Framer Motion Variants
 const containerVariants = {
-  hidden: {},
+  hidden: { opacity: 0 },
   visible: {
+    opacity: 1,
     transition: {
-      staggerChildren: 0.18,
+      staggerChildren: 0.15,
     },
   },
 };
@@ -32,13 +25,15 @@ const containerVariants = {
 const fadeUp = {
   hidden: {
     opacity: 0,
-    y: 40,
+    y: 30,
+    filter: "blur(4px)",
   },
   visible: {
     opacity: 1,
     y: 0,
+    filter: "blur(0px)",
     transition: {
-      duration: 0.8,
+      duration: 0.7,
       ease: "easeOut",
     },
   },
@@ -47,7 +42,7 @@ const fadeUp = {
 const cardVariant = {
   hidden: {
     opacity: 0,
-    y: 50,
+    y: 40,
     scale: 0.95,
   },
   visible: {
@@ -63,75 +58,55 @@ const cardVariant = {
 
 const Main = () => {
   return (
-    <section className="relative overflow-hidden bg-[#a7a7a7] py-28">
-      {/* Background Glow */}
-      <div className="absolute left-0 top-0 h-80 w-80 rounded-full bg-white/20 blur-[120px]" />
-      <div className="absolute right-0 bottom-0 h-80 w-80 rounded-full bg-white/20 blur-[120px]" />
+    <>
+      {/* Hero Section */}
+      <section className="relative flex h-full py-20 w-full items-center justify-center overflow-hidden bg-[#ababab]">
+        {/* Grid Background */}
+        <div className="bg-[#ababab]" />
 
-      <div className="relative mx-auto max-w-7xl px-6">
-        {/* Heading */}
+        {/* Blue Glow */}
+        <div className="absolute h-175 w-175 rounded-full " />
+
+        {/* Content */}
         <motion.div
+          variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.4 }}
-          variants={containerVariants}
-          className="mx-auto mb-20 max-w-3xl text-center"
+          className="relative z-10 mx-auto max-w-6xl px-6 text-center"
         >
-          <motion.h2
+          <motion.h1
             variants={fadeUp}
-            className="font-poppins text-5xl font-bold leading-tight tracking-tight text-[#111827]"
+            className="text-4xl font-bold leading-none tracking-[-0.04em] text-black sm:text-5xl lg:text-7xl xl:text-[78px]"
           >
-            Leading with clarity Build with purpose.
-          </motion.h2>
+            We design and engineer
+            <br />
+            <span className="text-blue-500">software that businesses</span>
+            <br />
+            actually rely on.
+          </motion.h1>
 
           <motion.p
             variants={fadeUp}
-            className="mt-6 text-lg leading-8 text-gray-600"
+            className="mx-auto mt-10 max-w-4xl text-lg leading-8 text-[#303030] sm:text-xl lg:text-[28px] lg:leading-[1.7]"
           >
-            Join the network of businesses making smarter decisions through
-            modern technology, real-time insights, and scalable digital
-            solutions.
+            Cryonix IT is a technology partner focused on building scalable,
+            secure, and maintainable digital systems — from ERP platforms to
+            AI-powered applications.
           </motion.p>
         </motion.div>
+        <div>
+          <img className="w-170 h-100 rounded-3xl border m-8 mr-38" src={web1} alt="web" />
+        </div>
+      </section>
 
-        {/* Stats */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          className="grid gap-8 md:grid-cols-2 xl:grid-cols-4"
-        >
-          {stats.map((item) => (
-            <motion.div
-              key={item.title}
-              variants={cardVariant}
-              whileHover={{
-                y: -8,
-                scale: 1.03,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 250,
-              }}
-              className="rounded-3xl border border-white/40 bg-white/20 backdrop-blur-xl shadow-lg"
-            >
-              <div className="flex h-52 flex-col justify-center p-8">
-                <h3 className="text-6xl font-bold text-[#092c61]">
-                  {item.number}
-                </h3>
+      
 
-                <div className="mt-5 h-px w-14 bg-[#092c61]/20"></div>
-
-                <p className="mt-5 text-lg font-medium tracking-wide text-gray-700">
-                  {item.title}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
+      {/* Capabilities & Team Subcomponents */}
+      <Team />
+      <Capabilities />
+      
+    </>
   );
 };
 

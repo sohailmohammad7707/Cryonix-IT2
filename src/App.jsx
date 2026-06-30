@@ -1,13 +1,11 @@
-import HeroImg from "./HeroImg.jsx";
-import Footer from "./components/Footer.jsx";
-import Main from "./components/Main.jsx";
+import { Home as HomeIcon } from "lucide-react";
+import Home from "./Pages/Home";
+
 
 function App() {
   return (
     <>
-      <HeroImg />
-      <Main />
-      <Footer />
+      <Home />
     </>
   );
 }
