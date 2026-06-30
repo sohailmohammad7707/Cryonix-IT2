@@ -7,42 +7,42 @@ const features = [
     tag: "CORE CAPABILITY",
     title: "AI & Automation",
     desc: "Build intelligent workflows powered by advanced machine learning to maximize business productivity.",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJaziP3CXeIVRrc54SgAkuy4V80t1Jfl0Wm6_gzZmZkw&s=10",
   },
   {
     id: 2,
     tag: "CORE CAPABILITY",
     title: "Web & Mobile Systems",
     desc: "Modern, lighting-fast responsive applications built with highly scalable frontend and backend ecosystems.",
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJT48fqBh6LY1q5GLHaZB0aKW7svt0UyqffBbdjr4XPg&s=10",
   },
   {
     id: 3,
     tag: "CORE CAPABILITY",
     title: "Security First Architecture",
     desc: "Enterprise-level protection utilizing end-to-end encryption, multi-factor auth, and zero-trust designs.",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc52pK4hrIrpstmzUzse2ne8GbvB-YbyPwZe_T1XTn7Q&s=10",
   },
   {
     id: 4,
     tag: "SCALE",
     title: "Cloud Infrastructure",
     desc: "Seamless, auto-scaling multi-cloud infrastructure engineered for 99.99% high availability and uptime.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVi4VoPN-6zR3F2wstk4UXys7MEDnBsPIgGG3cl3OGDg&s=10",
   },
   {
     id: 5,
     tag: "INTELLIGENCE",
     title: "Data Analytics & BI",
     desc: "Transform raw technical telemetry into real-time business insights with custom interactive dashboards.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTekUaQxSnCQXkEq4fFfKB0ybHr7E-mIPVq0DNKAevYJA&s=10",
   },
   {
     id: 6,
     tag: "STRATEGY",
     title: "API Ecosystems",
     desc: "Design and build pristine, developer-friendly REST & GraphQL APIs to power your third-party integrations.",
-    image: "https://images.unsplash.com/photo-1516116211223-5c359a36298a?w=800",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9QPeFrsxDSrKAMj5kAeUw75mw1-UY1kyQWGNGdzwbCw&s=10",
   },
 ];
 
@@ -101,7 +101,7 @@ const Features = () => {
       <div className="relative z-10">
         {/* Heading */}
         <motion.div variants={headerVariants} className="text-center">
-          <h2 className="text-center text-5xl md:text-7xl font-extrabold text-black">
+          <h2 className="text-center text-5xl md:text-7xl font-extrabold text-[#303030]">
             Core <span className="text-sky-700">Capabilities</span>
           </h2>
           {/* Underline */}

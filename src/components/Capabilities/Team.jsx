@@ -75,17 +75,7 @@ const cardVariants = {
 const Team = () => {
   return (
     <section className="relative overflow-hidden bg-gray-100 px-6 py-28 dark:bg-[#ababab] lg:px-[8%]">
-      {/* Grid Background */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-20 dark:opacity-40"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(0,0,0,.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0,0,0,.1) 1px, transparent 1px)
-          `,
-          backgroundSize: "70px 70px",
-        }}
-      />
+      
 
       <div className="relative z-10">
         {/* Animated Heading */}
@@ -96,7 +86,7 @@ const Team = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white md:text-6xl lg:text-7xl">
+          <h2 className="text-4xl font-extrabold text-gray-900 dark:text-[#303030] md:text-6xl lg:text-7xl">
             Meet Our <span className="text-sky-600 dark:text-sky-700">Team</span>
           </h2>
           <motion.div 
