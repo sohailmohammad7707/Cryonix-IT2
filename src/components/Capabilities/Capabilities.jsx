@@ -1,42 +1,98 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const features = [
   {
     id: 1,
-    tag: "CORE FEATURE",
+    tag: "CORE CAPABILITY",
     title: "AI & Automation",
-    desc: "Build intelligent workflows powered by AI to improve business productivity.",
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
+    desc: "Build intelligent workflows powered by advanced machine learning to maximize business productivity.",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
   },
   {
     id: 2,
-    tag: "CORE FEATURE",
+    tag: "CORE CAPABILITY",
     title: "Web & Mobile Systems",
-    desc: "Modern responsive applications built with scalable technologies.",
-    image:
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800",
+    desc: "Modern, lighting-fast responsive applications built with highly scalable frontend and backend ecosystems.",
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800",
   },
   {
     id: 3,
-    tag: "CORE FEATURE",
-    title: "Security First",
-    desc: "Secure architecture, authentication and enterprise level protection.",
-    image:
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800",
+    tag: "CORE CAPABILITY",
+    title: "Security First Architecture",
+    desc: "Enterprise-level protection utilizing end-to-end encryption, multi-factor auth, and zero-trust designs.",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800",
+  },
+  {
+    id: 4,
+    tag: "SCALE",
+    title: "Cloud Infrastructure",
+    desc: "Seamless, auto-scaling multi-cloud infrastructure engineered for 99.99% high availability and uptime.",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800",
+  },
+  {
+    id: 5,
+    tag: "INTELLIGENCE",
+    title: "Data Analytics & BI",
+    desc: "Transform raw technical telemetry into real-time business insights with custom interactive dashboards.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+  },
+  {
+    id: 6,
+    tag: "STRATEGY",
+    title: "API Ecosystems",
+    desc: "Design and build pristine, developer-friendly REST & GraphQL APIs to power your third-party integrations.",
+    image: "https://images.unsplash.com/photo-1516116211223-5c359a36298a?w=800",
   },
 ];
 
+// Framer Motion Animation Variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15, // Cascades the card entry animation
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.215, 0.61, 0.355, 1], // Smooth custom cubic bezier curve
+    },
+  },
+};
+
+const headerVariants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6 },
+  },
+};
+
 const Features = () => {
   return (
-    <section className="relative overflow-hidden bg-[#ababab] py-28 px-[8%]">
+    <motion.section 
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      className="relative overflow-hidden bg-[#ababab] py-28 px-[8%]"
+    >
       {/* Grid Background */}
       <div
-        className="absolute inset-0 opacity-100"
+        className="absolute inset-0 opacity-20 pointer-events-none"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px)
+            linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px)
           `,
           backgroundSize: "70px 70px",
         }}
@@ -44,54 +100,64 @@ const Features = () => {
 
       <div className="relative z-10">
         {/* Heading */}
-        <h2 className="text-center text-5xl md:text-7xl font-extrabold text-black">
-          Core <span className="text-sky-700">Capabilities</span>
-        </h2>
+        <motion.div variants={headerVariants} className="text-center">
+          <h2 className="text-center text-5xl md:text-7xl font-extrabold text-black">
+            Core <span className="text-sky-700">Capabilities</span>
+          </h2>
+          {/* Underline */}
+          <div className="w-24 h-1.5 bg-sky-700 rounded-full mx-auto mt-5 mb-16" />
+        </motion.div>
 
-        {/* Underline */}
-        <div className="w-22.5 h-1.5 bg-sky-700 rounded-full mx-auto mt-5 mb-16" />
-
-        {/* Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        {/* Cards Grid */}
+        <motion.div 
+          variants={containerVariants}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+        >
           {features.map((item) => (
-            <div
+            <motion.div
               key={item.id}
-              className="group overflow-hidden rounded-[35px] border border-white/10 bg-[#252525] transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_30px_70px_rgba(0,0,0,.4)]"
+              variants={itemVariants}
+              whileHover={{ 
+                y: -12,
+                boxShadow: "0px 30px 60px rgba(0, 14, 43, 0.4)",
+              }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="group overflow-hidden rounded-[35px] border border-white/5 bg-zinc-900"
             >
-              {/* Image */}
-              <div className="relative h-65 overflow-hidden">
+              {/* Image Container */}
+              <div className="relative h-60 overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
-                {/* Gradient Overlay */}
-                <div className="absolute inset-x-0 bottom-0 h-30 bg-linear-to-t from-[#11182a] to-transparent" />
+                {/* Smooth Dark Gradient Overlay */}
+                <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-zinc-900 to-transparent" />
 
                 {/* Badge */}
-                <span className="absolute top-5 left-5 rounded-full border border-white/10 bg-white/15 px-5 py-2 text-xs font-bold tracking-[2px] text-white backdrop-blur-md">
+                <span className="absolute top-5 left-5 rounded-full border border-white/10 bg-black/40 px-4 py-1.5 text-[10px] font-bold tracking-[2px] text-zinc-300 backdrop-blur-md">
                   {item.tag}
                 </span>
               </div>
 
-              {/* Content */}
-              <div className="p-9">
-                <div className="mb-6 h-1.25 w-13.75 rounded-full bg-sky-400" />
+              {/* Content Box */}
+              <div className="p-8 pt-4">
+                <div className="mb-6 h-1 w-12 rounded-full bg-sky-500 transition-all duration-300 group-hover:w-20" />
 
-                <h3 className="mb-5 text-3xl lg:text-[38px] font-bold text-white">
+                <h3 className="mb-4 text-2xl font-bold text-white tracking-tight">
                   {item.title}
                 </h3>
 
-                <p className="text-lg leading-8 text-slate-300">
+                <p className="text-base leading-7 text-zinc-400">
                   {item.desc}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

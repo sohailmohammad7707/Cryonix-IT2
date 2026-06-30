@@ -139,8 +139,9 @@ const Main = () => {
       </section>
 
       {/* Capabilities & Team Subcomponents */}
-      <Team />
       <Capabilities />
+      <Team />
+      
     </>
   );
 };
