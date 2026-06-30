@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "motion/react";
 import Capabilities from "./Capabilities/Capabilities";
 import Team from "./Capabilities/Team";
-import web1 from "../assets/web4.png"
+import web1 from "../assets/web4.png";
 
 const stats = [
   { number: "20+", title: "Projects Delivered" },
@@ -81,7 +81,24 @@ const Main = () => {
           >
             We design and engineer
             <br />
-            <span className="text-blue-500">software that businesses</span>
+            <motion.span
+              animate={{
+                color: [
+                  "#000000", // Black
+                  "#3B82F6", // Blue
+                  "#8B5CF6", // Purple
+                  "#10B981", // Green
+                  "#000000", // Back to Black
+                ],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              software that businesses
+            </motion.span>
             <br />
             actually rely on.
           </motion.h1>
@@ -95,17 +112,35 @@ const Main = () => {
             AI-powered applications.
           </motion.p>
         </motion.div>
-        <div>
-          <img className="w-170 h-100 rounded-3xl border m-8 mr-38" src={web1} alt="web" />
-        </div>
+        <motion.img
+          src={web1}
+          alt="web"
+          loading="lazy"
+          decoding="async"
+          className="w-170 h-100 rounded-3xl border m-8 mr-8"
+          initial={{ opacity: 0, x: 80, scale: 0.9 }}
+          animate={{
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            y: [0, -12, 0],
+          }}
+          transition={{
+            opacity: { duration: 0.8 },
+            x: { duration: 0.8, ease: "easeOut" },
+            scale: { duration: 0.8 },
+            y: {
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut",
+            },
+          }}
+        />
       </section>
-
-      
 
       {/* Capabilities & Team Subcomponents */}
       <Team />
       <Capabilities />
-      
     </>
   );
 };

@@ -44,19 +44,19 @@ const Features = () => {
 
       <div className="relative z-10">
         {/* Heading */}
-        <h2 className="text-center text-5xl md:text-7xl font-extrabold text-white">
-          Core <span className="text-sky-400">Capabilities</span>
+        <h2 className="text-center text-5xl md:text-7xl font-extrabold text-black">
+          Core <span className="text-sky-700">Capabilities</span>
         </h2>
 
         {/* Underline */}
-        <div className="w-22.5 h-1.5 bg-sky-400 rounded-full mx-auto mt-5 mb-16" />
+        <div className="w-22.5 h-1.5 bg-sky-700 rounded-full mx-auto mt-5 mb-16" />
 
         {/* Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {features.map((item) => (
             <div
               key={item.id}
-              className="group overflow-hidden rounded-[35px] border border-white/10 bg-[#11182a] transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_30px_70px_rgba(0,0,0,.4)]"
+              className="group overflow-hidden rounded-[35px] border border-white/10 bg-[#252525] transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_30px_70px_rgba(0,0,0,.4)]"
             >
               {/* Image */}
               <div className="relative h-65 overflow-hidden">

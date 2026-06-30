@@ -52,10 +52,10 @@ const Team = () => {
         {/* Heading */}
         <div className="mb-20 text-center">
           <h2 className="text-4xl font-extrabold text-black md:text-6xl lg:text-7xl">
-            Meet Our <span className="text-sky-400">Team</span>
+            Meet Our <span className="text-sky-700">Team</span>
           </h2>
 
-          <div className="mx-auto mt-6 h-1.5 w-24 rounded-full bg-sky-400" />
+          <div className="mx-auto mt-6 h-1.5 w-24 rounded-full bg-sky-700" />
         </div>
 
         {/* Cards */}
