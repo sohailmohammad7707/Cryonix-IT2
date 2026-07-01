@@ -2,7 +2,8 @@ import React from "react";
 import { motion } from "motion/react";
 import Capabilities from "./Capabilities/Capabilities";
 import Team from "./Capabilities/Team";
-import web1 from "../assets/web4.png";
+import web1 from "../assets/web31.png";
+import web8 from "../assets/web32.png";
 
 const stats = [
   { number: "20+", title: "Projects Delivered" },
@@ -39,109 +40,143 @@ const fadeUp = {
   },
 };
 
-const cardVariant = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-    scale: 0.95,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  },
-};
-
 const Main = () => {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative flex h-full py-20 w-full items-center justify-center overflow-hidden bg-[#ababab]">
-        {/* Grid Background */}
-        <div className="bg-[#ababab]" />
+      <div className="bg-[#ffffff] flex flex-col items-center w-full min-h-screen py-24">
+        {/* Main Section Header */}
+       
+        <div className=" text-5xl font-light tracking-tight text-zinc-900  p-3 pt-12 text-center">
+           <span className="block mb-3 text-xs font-semibold tracking-[0.25em] uppercase text-zinc-500">
+             Start Developing
+          </span>
+          <h3>Let's Work with us.</h3>
+        </div>
 
-        {/* Blue Glow */}
-        <div className="absolute h-175 w-175 rounded-full " />
+        {/* Section 1: Image Left, Content Right */}
+        <section className="relative flex flex-col lg:flex-row h-full py-16 w-[85%] items-center justify-center gap-10 ">
+          {/* Blue Glow Background Effect */}
+          <div className="absolute h-175 w-175 rounded-full opacity-30 pointer-events-none" />
 
-        {/* Content */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.4 }}
-          className="relative z-10 mx-auto max-w-6xl px-6 text-center"
-        >
-          <motion.h1
-            variants={fadeUp}
-            className="text-4xl font-bold leading-none tracking-[-0.04em] text-black sm:text-5xl lg:text-7xl xl:text-[78px]"
-          >
-            We design and engineer
-            <br />
-            <motion.span
-              animate={{
-                color: [
-                  "#000000", // Black
-                  "#3B82F6", // Blue
-                  "#8B5CF6", // Purple
-                  "#10B981", // Green
-                  "#000000", // Back to Black
-                ],
-              }}
-              transition={{
-                duration: 8,
+          {/* Animated Image */}
+          <motion.img
+            src={web1}
+            alt="Modern Web Design Showcase"
+            loading="lazy"
+            decoding="async"
+            className="w-full lg:w-[55%] h-full rounded-3xl object-cover border"
+            initial={{ opacity: 0, x: -50, scale: 0.95 }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              scale: 1,
+            }}
+            viewport={{ once: true }}
+            animate={{
+              y: [0, -12, 0],
+            }}
+            transition={{
+              opacity: { duration: 0.8 },
+              x: { duration: 0.8, ease: "easeOut" },
+              scale: { duration: 0.8 },
+              y: {
+                duration: 3,
                 repeat: Infinity,
-                ease: "linear",
-              }}
-            >
-              software that businesses
-            </motion.span>
-            <br />
-            actually rely on.
-          </motion.h1>
+                ease: "easeInOut",
+              },
+            }}
+          />
 
-          <motion.p
-            variants={fadeUp}
-            className="mx-auto mt-10 max-w-4xl text-lg leading-8 text-[#303030] sm:text-xl lg:text-[28px] lg:leading-[1.7]"
+          {/* Content Block */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+            className="relative z-10 w-full lg:w-1/2 max-w-xl px-6 text-center lg:text-left"
           >
-            Cryonix IT is a technology partner focused on building scalable,
-            secure, and maintainable digital systems — from ERP platforms to
-            AI-powered applications.
-          </motion.p>
-        </motion.div>
-        <motion.img
-          src={web1}
-          alt="web"
-          loading="lazy"
-          decoding="async"
-          className="w-170 h-100 rounded-3xl border m-8 mr-8"
-          initial={{ opacity: 0, x: 80, scale: 0.9 }}
-          animate={{
-            opacity: 1,
-            x: 0,
-            scale: 1,
-            y: [0, -12, 0],
-          }}
-          transition={{
-            opacity: { duration: 0.8 },
-            x: { duration: 0.8, ease: "easeOut" },
-            scale: { duration: 0.8 },
-            y: {
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-            },
-          }}
-        />
-      </section>
+            <motion.h1
+              variants={fadeUp}
+              className="font-ptsans w-110  text-3xl md:text-4xl font-bold leading-tight tracking-[-0.04em] text-[#202020]"
+            >
+              We design and create Modern Looking websites
+            </motion.h1>
 
-      {/* Capabilities & Team Subcomponents */}
-      <Capabilities />
-      <Team />
-      
+            <motion.p
+              variants={fadeUp}
+              className="mt-5 leading-7 text-[#404040] w-110"
+            >
+              Cryonix IT is a technology partner focused on building scalable,
+              secure, and maintainable digital systems — from ERP platforms to
+              AI-powered applications.
+            </motion.p>
+          </motion.div>
+        </section>
+
+        {/* Section 2: Content Left, Image Right (Alternating Row on Desktop) */}
+        <section className="relative flex flex-col-reverse lg:flex-row h-full py-16 w-[100%] items-center justify-center gap-10 overflow-hidden">
+          {/* Blue Glow Background Effect */}
+          <div className="absolute h-175 w-175 rounded-full opacity-30 pointer-events-none" />
+
+          {/* Content Block */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+            className="relative z-10 w-full lg:w-1/2 max-w-xl px-6 text-center lg:text-left"
+          >
+            <motion.h1
+              variants={fadeUp}
+              className="font-font-ptsans ml-22 w-110 text-3xl md:text-4xl font-bold leading-tight tracking-[-0.04em] text-[#202020]"
+            >
+              Engineered for Scale High & Performance
+            </motion.h1>
+
+            <motion.p
+              variants={fadeUp}
+              className=" w-110 ml-22 mt-5 leading-7 text-[#404040]"
+            >
+              Cryonix IT is a technology partner focused on building scalable,
+              secure, and maintainable digital systems — from ERP platforms to
+              AI-powered applications.
+            </motion.p>
+          </motion.div>
+
+          {/* Animated Image */}
+          <motion.img
+            src={web8}
+            alt="Performance Architecture Showcase"
+            loading="lazy"
+            decoding="async"
+            className="w-full lg:w-1/2  h-full border rounded-3xl object-cover shadow-lg"
+            initial={{ opacity: 0, x: 50, scale: 0.95 }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              scale: 1,
+            }}
+            viewport={{ once: true }}
+            animate={{
+              y: [0, -12, 0],
+            }}
+            transition={{
+              opacity: { duration: 0.8 },
+              x: { duration: 0.8, ease: "easeOut" },
+              scale: { duration: 0.8 },
+              y: {
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+              },
+            }}
+          />
+        </section>
+
+        {/* Capabilities & Team Subcomponents */}
+        <Capabilities />
+        {/* <Team /> */}
+      </div>
     </>
   );
 };

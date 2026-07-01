@@ -74,7 +74,7 @@ const cardVariants = {
 
 const Team = () => {
   return (
-    <section className="relative overflow-hidden bg-gray-100 px-6 py-28 dark:bg-[#ababab] lg:px-[8%]">
+    <section className="relative overflow-hidden bg-white px-6 py-28 dark:bg-white lg:px-[8%]">
       
 
       <div className="relative z-10">
@@ -117,14 +117,14 @@ const Team = () => {
               className="group relative flex flex-col justify-end overflow-hidden rounded-[30px] border border-gray-200 dark:border-white/10 bg-gray-900 shadow-xl hover:shadow-[0_30px_60px_rgba(0,0,0,0.3)]"
             >
               {/* Image Container */}
-              <div className="relative h-[420px] w-full overflow-hidden">
+              <div className="relative h-105 w-full overflow-hidden">
                 <img
                   src={member.image}
                   alt={member.name}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/50 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-gray-950 via-gray-950/50 to-transparent" />
               </div>
 
               {/* Content Overlay */}
