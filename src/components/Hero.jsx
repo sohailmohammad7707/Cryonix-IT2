@@ -1,4 +1,4 @@
-import Bg from "../assets/MainBG1.png";
+import Bg from "../assets/MainBG4.png";
 import { Rocket } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -28,19 +28,18 @@ const item = {
 
 const HeroImg = () => {
   return (
-    <section className="bg-white relative w-full min-h-screen overflow-hidden" >
-      {/* Background Image */}
-      <img
-        src={Bg}
-        alt="Background"
-        className="absolute inset-0 w-full h-full "
-      />
+    <section className="bg-white relative w-full min-h-screen overflow-hidden">
+     <img
+  src={Bg}
+  alt="Background"
+  className="absolute inset-0 h-full w-full object-cover"
+    />
 
       {/* Overlay */}
       <div className="absolute inset-0"></div>
 
       {/* Hero Content */}
-      <div className="relative z-10 flex min-h-screen items-center px-8 lg:px-16">
+      <div className="mt-8 relative z-10 flex min-h-screen items-center px-8 lg:px-16">
         <motion.div
           variants={container}
           initial="hidden"
@@ -51,7 +50,6 @@ const HeroImg = () => {
           <motion.div variants={item}>
             <h1 className="font-poppins text-5xl md:text-6xl lg:text-6xl font-semibold leading-tight text-black ">
               Build Scalable <br />
-
               <motion.span
                 initial={{ opacity: 0, y: 30 }}
                 animate={{
@@ -86,7 +84,8 @@ const HeroImg = () => {
           <motion.div variants={item} className="mt-8 pb-8">
             <p className="font-merriweather text-lg md:text-xl leading-relaxed text-[#303030]">
               We build high-performance web applications, cloud solutions, and
-              <br />AI-powered products that help businesses grow faster.
+              <br />
+              AI-powered products that help businesses grow faster.
             </p>
 
             <p className="mt-3 font-merriweather text-lg md:text-xl leading-relaxed text-[#303030]">
@@ -95,10 +94,7 @@ const HeroImg = () => {
           </motion.div>
 
           {/* Buttons */}
-          <motion.div
-            variants={item}
-            className="mt-10 flex flex-wrap gap-5"
-          >
+          <motion.div variants={item} className="mt-10 flex flex-wrap gap-5">
             <motion.button
               whileHover={{
                 scale: 1.05,
