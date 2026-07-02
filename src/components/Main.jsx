@@ -2,8 +2,9 @@ import React from "react";
 import { motion } from "motion/react";
 import Capabilities from "./Capabilities/Capabilities";
 import Team from "./Capabilities/Team";
-import web1 from "../assets/web31.png";
-import web8 from "../assets/web32.png";
+import web1 from "../assets/web1.png";
+import web8 from "../assets/web2.png";
+import Skills from "./Capabilities/Skills";
 
 const stats = [
   { number: "20+", title: "Projects Delivered" },
@@ -174,6 +175,7 @@ const Main = () => {
         </section>
 
         {/* Capabilities & Team Subcomponents */}
+        <Skills />
         <Capabilities />
         {/* <Team /> */}
       </div>

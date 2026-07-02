@@ -107,7 +107,7 @@ const imageVariants = {
 
 const Features = () => {
   return (
-    <section className="relative w-full bg-white py-32 font-sans overflow-hidden">
+    <section className="relative w-full bg-white py-18 font-sans overflow-hidden">
       <div className="relative z-10">
 
         {/* Header */}

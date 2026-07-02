@@ -1,6 +1,6 @@
 import React from "react";
 import { Hexagon, Mail, Phone, MapPin } from "lucide-react";
-import Logo from "../assets/logo.png"
+import Logo from "../assets/logo1.png"
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -10,26 +10,26 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-950 text-white">
+    <footer className="bg-gray-200 text-black">
       <div className="text-8xl text-center pt-10 p-4 font-bold font-poppins">CRYONIX IT</div>
       <div className="max-w-7xl mx-auto px-6 lg:px-1 0 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company */}
           <div>
-            <div className="flex items-center gap-3 mb-5 text-white">
+            <div className="flex items-center gap-3 mb-5 text-black">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl">
                 <img src={Logo} alt="" />
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-white">Cryonix</h2>
+                <h2 className="text-2xl font-bold text-black">Cryonix</h2>
                 <p className="text-[10px] tracking-[0.35em] uppercase text-blue-600">
                   Innovations
                 </p>
               </div>
             </div>
 
-            <p className="text-slate-300 leading-7">
+            <p className="text-slate-700 leading-7">
               We build scalable software, AI-powered applications, cloud
               platforms, and digital solutions that help businesses innovate and
               grow.
@@ -38,9 +38,9 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold text-white mb-5">Quick Links</h3>
+            <h3 className="text-lg font-bold text-black mb-5">Quick Links</h3>
 
-            <ul className="space-y-3 text-slate-300">
+            <ul className="space-y-3 text-slate-700">
               {[
                 "Home",
                 "Services",
@@ -61,9 +61,9 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-bold text-white mb-5">Services</h3>
+            <h3 className="text-lg font-bold text-black mb-5">Services</h3>
 
-            <ul className="space-y-3 text-slate-300">
+            <ul className="space-y-3 text-slate-700">
               <li>Web Development</li>
               <li>Mobile App Development</li>
               <li>Cloud Solutions</li>
@@ -74,7 +74,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-bold text-white mb-5">Contact</h3>
+            <h3 className="text-lg font-bold text-black mb-5">Contact</h3>
 
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-blue-600">
@@ -112,17 +112,17 @@ const Footer = () => {
         </div>
 
         {/* Bottom Footer */}
-        <div className="mt-14 border-t border-slate-200 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-slate-400 text-sm">
+        <div className="mt-14 border-t border-slate-600 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-slate-700 text-sm">
             © {new Date().getFullYear()} Cryonix IT. All rights reserved.
           </p>
 
           <div className="flex gap-6 text-sm">
-            <a href="#" className="text-slate-400 hover:text-blue-600 transition">
+            <a href="#" className="text-slate-700 hover:text-blue-600 transition">
               Privacy Policy
             </a>
 
-            <a href="#" className="text-slate-500 hover:text-blue-600 transition">
+            <a href="#" className="text-slate-700 hover:text-blue-600 transition">
               Terms & Conditions
             </a>
           </div>

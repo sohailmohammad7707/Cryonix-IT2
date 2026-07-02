@@ -1,4 +1,4 @@
-import Bg from "../assets/MainBG10.png";
+import Bg from "../assets/MainBG1.png";
 import { Rocket } from "lucide-react";
 import { motion } from "framer-motion";
 
